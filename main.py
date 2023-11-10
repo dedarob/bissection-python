@@ -14,7 +14,8 @@ if funcA * funcB > 0:
     print("Função não tem raiz.")
     exit()
 else:
-    while (b - a) >= errorMarg:
+    i = 0
+    while (b - a) >= errorMarg and i < 1000:
         funcA = a**2 + math.log(a)
         funcB = b**2 + math.log(b)
         funcC = c**2 + math.log(c)
@@ -23,5 +24,6 @@ else:
         if funcB * funcC > 0:
             b = c
         c = (a + b) / 2
+        i += 1
     result = (a + b) / 2
     print("Resultado: {:.4}".format(result))
